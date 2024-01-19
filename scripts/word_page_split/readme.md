@@ -1,0 +1,1 @@
+Learn how to split a Word document into multiple documents in Python: https://blog.aspose.com/2021/11/18/split-a-word-document-in-python/
