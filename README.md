@@ -1,33 +1,33 @@
 # Document Conversion and Processing Scripts
 
-This repository contains Python scripts for various document conversion and processing tasks. It is organized into three main sections:
+This repository contains Python scripts for various document conversion and processing tasks. It is organized into three main sections, each within its own directory:
 
-*   **Conversion Scripts**:  Scripts for converting between different document formats (PDF to PNG, JPG to PDF, PDF to Text, PDF to Word).
-*   **Word Document Splitting Scripts**: Scripts for splitting Word DOCX documents in different ways (by page range, by section, by page count).
-*   **PDF Processing Scripts**: Scripts for manipulating PDF documents (scaling pages, separating pages, compressing PDFs).
+*   **`conversion_scripts`**:  Scripts for converting between different document formats (PDF to PNG, JPG to PDF, PDF to Text, PDF to Word).
+*   **`word_splitting_scripts`**: Scripts for splitting Word DOCX documents in different ways (by page range, by section, by page count).
+*   **`pdf_processing_scripts`**: Scripts for manipulating PDF documents (scaling pages, separating pages, compressing PDFs).
 
 ## Sections and Scripts Overview
 
-### 1. Conversion Scripts
+### 1. `conversion_scripts` Directory
 
-This section contains scripts for converting between different document formats:
+This directory (`conversion_scripts/`) contains scripts for converting between different document formats:
 
 *   **`pdf_to_png_converter.py`**: Converts PDF documents to PNG images, with each page becoming a separate PNG file.
 *   **`jpg_to_pdf_converter.py`**: Converts JPG images to PDF documents.
 *   **`pdf_to_text_converter.py`**: Extracts text from PDF documents and saves it to a TXT file.
 *   **`pdf_to_word_converter.py`**: Converts PDF documents to Word DOCX files.
 
-### 2. Word Document Splitting Scripts
+### 2. `word_splitting_scripts` Directory
 
-This section includes scripts for splitting Word DOCX documents using Aspose.Words:
+This directory (`word_splitting_scripts/`) includes scripts for splitting Word DOCX documents using Aspose.Words:
 
 *   **`split_word_document_by_page_range.py`**: Splits a Word document by extracting a specified range of pages into a new document.
 *   **`split_word_document_by_section.py`**: Splits a Word document into multiple documents, with each section becoming a separate DOCX file.
 *   **`split_word_document_by_page.py`**: Splits a Word document into multiple documents, where each output document contains a defined number of pages.
 
-### 3. PDF Processing Scripts
+### 3. `pdf_processing_scripts` Directory
 
-This section provides scripts for various PDF manipulation tasks:
+This directory (`pdf_processing_scripts/`) provides scripts for various PDF manipulation tasks:
 
 *   **`scale_pdf_converter.py`**: Resizes PDF documents to a new specified width and height, scaling page content.
 *   **`separate_pdf_pages_converter.py`**: Separates each page of a PDF document into individual PDF files.
@@ -35,7 +35,7 @@ This section provides scripts for various PDF manipulation tasks:
 
 ## Requirements
 
-The scripts in this repository rely on several Python libraries. Before running any script, ensure you have installed the necessary libraries. You can install all required libraries using pip and the provided `requirements.txt` file.
+The scripts in this repository rely on several Python libraries. Before running any script, ensure you have installed the necessary libraries. You can install all required libraries using pip and the provided `requirements.txt` file located in the root directory of this repository.
 
 **Required Python Libraries:**
 
@@ -59,13 +59,34 @@ The scripts in this repository rely on several Python libraries. Before running 
 
 ## Usage
 
-Each script is designed to be run from the command line. To use a script:
+The scripts are organized into directories based on their functionality. To use a script:
 
-1.  **Navigate to the script's directory**: Open your terminal and navigate to the directory containing the specific script you want to run (e.g., `conversion`, `word_page_split`, or `PDF process`).
+1.  **Navigate to the correct script directory**: Open your terminal and first navigate to the root directory of this repository (where `README.md` and `requirements.txt` are located). Then, change your current directory to the folder containing the script you wish to use:
 
-2.  **Modify Script Parameters (if needed)**: Open the script (e.g., `pdf_to_png_converter.py`) in a text editor. Look for the `main()` function.  You will need to adjust the input file paths, output directories, and any script-specific parameters (like page ranges, resolution, JPEG quality) within the `main()` function to match your needs.
+    *   **For Conversion Scripts**:
+        ```bash
+        cd conversion_scripts
+        ```
+        You are now in the `conversion_scripts` directory, which contains scripts like `pdf_to_png_converter.py`, `jpg_to_pdf_converter.py`, etc.
 
-    **Example: Modifying `pdf_to_png_converter.py`:**
+    *   **For Word Splitting Scripts**:
+        ```bash
+        cd word_splitting_scripts
+        ```
+        You are now in the `word_splitting_scripts` directory, which contains scripts like `split_word_document_by_page_range.py`, `split_word_document_by_section.py`, etc.
+
+    *   **For PDF Processing Scripts**:
+        ```bash
+        cd pdf_processing_scripts
+        ```
+        You are now in the `pdf_processing_scripts` directory, which contains scripts like `scale_pdf_converter.py`, `separate_pdf_pages_converter.py`, etc.
+
+2.  **Modify Script Parameters (if needed)**: Once you are in the correct script directory, open the script you intend to run (e.g., `pdf_to_png_converter.py`) in a text editor. Look for the `main()` function and adjust the input file paths, output directories, and any script-specific parameters within the `main()` function to match your needs.
+
+    **(Example modifications remain the same as in the previous README and are omitted here for brevity, but should be included in the full README.md)**
+    *(Refer to the previous full README.md for example modifications for `pdf_to_png_converter.py`, `split_word_document_by_page_range.py`, and `compress_pdf_converter.py`)*
+
+    **Example: Modifying `pdf_to_png_converter.py` (in `conversion_scripts` directory):**
 
     ```python
     def main():
@@ -77,7 +98,7 @@ Each script is designed to be run from the command line. To use a script:
         converter.convert_to_png()
     ```
 
-    **Example: Modifying `split_word_document_by_page_range.py`:**
+    **Example: Modifying `split_word_document_by_page_range.py` (in `word_splitting_scripts` directory):**
 
     ```python
     def main():
@@ -88,7 +109,7 @@ Each script is designed to be run from the command line. To use a script:
         splitter.split_document(3, 6) # ⚙️ Example: Extract pages 3 to 6. Adjust page numbers as needed.
     ```
 
-    **Example: Modifying `compress_pdf_converter.py`:**
+    **Example: Modifying `compress_pdf_converter.py` (in `pdf_processing_scripts` directory):**
 
     ```python
     def main():
@@ -101,15 +122,39 @@ Each script is designed to be run from the command line. To use a script:
         compressor.compress_pdf()
     ```
 
-3.  **Run the script**: In your terminal, from within the script's directory, execute the script using Python:
+3.  **Run the script**: From within the script's directory (which you navigated to in step 1), execute the script using Python:
 
     ```bash
-    python pdf_to_png_converter.py  # Example for PDF to PNG conversion
-    python split_word_document_by_page_range.py # Example for Word splitting
-    python compress_pdf_converter.py # Example for PDF compression
+    python pdf_to_png_converter.py  # Example for PDF to PNG conversion (run from conversion_scripts directory)
+    python split_word_document_by_page_range.py # Example for Word splitting (run from word_splitting_scripts directory)
+    python compress_pdf_converter.py # Example for PDF compression (run from pdf_processing_scripts directory)
     ```
 
-    Replace the script name with the one you intend to use.
+    Make sure you are running the `python` command from *inside* the specific script's directory (e.g., `conversion_scripts`, `word_splitting_scripts`, or `pdf_processing_scripts`). Replace the script name with the one you intend to use.
+
+**(The rest of the "Logging" and "Notes" sections of the README remain the same as in the previous version and are omitted here for brevity, but should be included in the full README.md)**
+*(Refer to the previous full README.md for the "Logging" and "Notes" sections)*
+
+**To summarize the folder structure for usage:**
+```bash
+document_processing_scripts/ [Root directory]
+├── README.md [Integrated README file]
+├── requirements.txt [Integrated requirements file]
+├── conversion_scripts/ [Directory for conversion scripts]
+│ ├── pdf_to_png_converter.py
+│ ├── jpg_to_pdf_converter.py
+│ ├── pdf_to_text_converter.py
+│ └── pdf_to_word_converter.py
+├── word_splitting_scripts/ [Directory for word splitting scripts]
+│ ├── split_word_document_by_page_range.py
+│ ├── split_word_document_by_section.py
+│ └── split_word_document_by_page.py
+└── pdf_processing_scripts/ [Directory for PDF processing scripts]
+├── scale_pdf_converter.py
+├── separate_pdf_pages_converter.py
+└── compress_pdf_converter.py
+```
+
 
 ## Logging
 
