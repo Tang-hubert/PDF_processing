@@ -1,0 +1,6 @@
+aspose-pdf
+aspose-words
+Pillow
+PyPDF2
+pdf2docx
+PyMuPDF
